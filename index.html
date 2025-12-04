@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youtube Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+<nav class="flex-div">
+  <div class="nav-left flex-div">
+    <img src="youtubeimages/menu.png" class="menu-icon">
+    <a href="index.html">
+        <img src="youtubeimages/logo.png" class="logo">
+    </a>
+  </div>
+
+  <div class="nav-middle flex-div">
+    <div class="search-box flex-div">
+        <input type="text" placeholder="Search">
+        <img src="youtubeimages/search.png">
+    </div>
+    <img src="youtubeimages/voice-search.png" class="mic-icon">
+  </div>
+
+  <div class="nav-right flex-div">
+    <img src="youtubeimages/upload.png">
+    <img src="youtubeimages/more.png">
+    <img src="youtubeimages/notification.png">
+    <img src="youtubeimages/Jack.png" class="user-icon">
+  </div>
+</nav>
+
+<div class="sidebar">
+  <div class="shortcut-links">
+    <a href=""> <img src="youtubeimages/home.png"><p>Home</p></a>
+    <a href=""> <img src="youtubeimages/explore.png"><p>Explore</p></a>
+    <a href=""> <img src="youtubeimages/subscription.png"><p>Subscription</p></a>
+    <a href=""> <img src="youtubeimages/library.png"><p>Library</p></a>
+    <a href=""> <img src="youtubeimages/history.png"><p>History</p></a>
+    <a href=""> <img src="youtubeimages/playlist.png"><p>Playlist</p></a>
+    <a href=""> <img src="youtubeimages/messages.png"><p>Messages</p></a>
+    <a href=""> <img src="youtubeimages/show-more.png"><p>Show More</p></a>
+    <hr>
+  </div>
+
+  <div class="subscribed-list">
+    <h3>SUBSCRIBED</h3>
+    <a href=""> <img src="youtubeimages/Jack.png"><p>Ryan Shentu</p></a>
+    <a href=""> <img src="youtubeimages/Jack.png"><p>Peanut Butter</p></a>
+    <a href=""> <img src="youtubeimages/Jack.png"><p>Cream Cheese</p></a>
+    <a href=""> <img src="youtubeimages/Jack.png"><p>Donut Jelly</p></a>
+    <a href=""> <img src="youtubeimages/Jack.png"><p>Cheese Steak</p></a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="banner">
+    <img src="youtubeimages/banner0.png">
+  </div>
+
+  <div class="mood-tabs">
+    <button class="mood-btn active" onclick="filterVideos('all', this)">All</button>
+    <button class="mood-btn" onclick="filterVideos('funny', this)">😂 Funny</button>
+    <button class="mood-btn" onclick="filterVideos('educational', this)">📚 Educational</button>
+    <button class="mood-btn" onclick="filterVideos('relaxed', this)">😌 Relaxed</button>
+    <button class="mood-btn" onclick="filterVideos('hype', this)">⚡ Hype</button>
+  </div>
+
+  <div class="list-container">
+    
+    <div class="vid-list" data-category="funny">
+      <a href="video.html"> 
+        <img src="youtubeimages/thumbnail1.png" class="thumbnail">
+      </a>
+      <div class="flex-div">
+        <img src="youtubeimages/Jack.png" class="profile-pic">
+        <div class="vid-info">
+          <a href="">Try Not To Laugh Challenge</a>
+          <p>Comedy Central</p>
+          <p>2M Views &bull; 1 day ago</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="vid-list" data-category="educational">
+      <a href="video.html"> 
+        <img src="youtubeimages/thumbnail2.png" class="thumbnail">
+      </a>
+      <div class="flex-div">
+        <img src="youtubeimages/Jack.png" class="profile-pic">
+        <div class="vid-info">
+          <a href="">Learn CSS Grid in 10 Min</a>
+          <p>Web Dev Simplified</p>
+          <p>500k Views &bull; 2 days ago</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="vid-list" data-category="relaxed">
+      <a href="video.html"> 
+        <img src="youtubeimages/thumbnail3.png" class="thumbnail">
+      </a>
+      <div class="flex-div">
+        <img src="youtubeimages/Jack.png" class="profile-pic">
+        <div class="vid-info">
+          <a href="">Lofi Beats to Study To</a>
+          <p>Lofi Girl</p>
+          <p>15k Views &bull; 3 hours ago</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="vid-list" data-category="hype">
+      <a href="video.html"> 
+        <img src="youtubeimages/thumbnail4.png" class="thumbnail">
+      </a>
+      <div class="flex-div">
+        <img src="youtubeimages/Jack.png" class="profile-pic">
+        <div class="vid-info">
+          <a href="">Insane Parkour Highlights</a>
+          <p>Red Bull</p>
+          <p>8M Views &bull; 1 week ago</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="vid-list" data-category="funny">
+      <a href="video.html"> 
+        <img src="youtubeimages/thumbnail5.png" class="thumbnail">
+      </a>
+      <div class="flex-div">
+        <img src="youtubeimages/Jack.png" class="profile-pic">
+        <div class="vid-info">
+          <a href="">Cats Being Weird</a>
+          <p>MeowTube</p>
+          <p>10M Views &bull; 5 days ago</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="vid-list" data-category="educational">
+      <a href="video.html"> 
+        <img src="youtubeimages/thumbnail6.png" class="thumbnail">
+      </a>
+      <div class="flex-div">
+        <img src="youtubeimages/Jack.png" class="profile-pic">
+        <div class="vid-info">
+          <a href="">History of the Universe</a>
+          <p>Kurzgesagt</p>
+          <p>3M Views &bull; 1 month ago</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="vid-list" data-category="relaxed">
+      <a href="video.html"> 
+        <img src="youtubeimages/thumbnail7.png" class="thumbnail">
+      </a>
+      <div class="flex-div">
+        <img src="youtubeimages/Jack.png" class="profile-pic">
+        <div class="vid-info">
+          <a href="">Rain Sounds 10 Hours</a>
+          <p>Nature Hub</p>
+          <p>100k Views &bull; 1 year ago</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="vid-list" data-category="hype">
+      <a href="video.html"> 
+        <img src="youtubeimages/thumbnail0.png" class="thumbnail">
+      </a>
+      <div class="flex-div">
+        <img src="youtubeimages/Jack.png" class="profile-pic">
+        <div class="vid-info">
+          <a href="">Best Gaming Moments 2024</a>
+          <p>Gaming Nexus</p>
+          <p>4M Views &bull; 2 days ago</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<script src="script.js"></script> 
+
+</body>
+</html>
