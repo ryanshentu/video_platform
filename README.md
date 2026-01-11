@@ -5,7 +5,6 @@ A fully responsive, dynamic video streaming platform inspired by YouTube. This a
 **[🔴 Live Demo](https://ryanshentu.github.io/video_platform/)**
 
 ![Project Screenshot](youtubeimages/screenshot.png)
-*(Note: Add a screenshot of your homepage here for the best effect!)*
 
 ## 🚀 Key Features
 
