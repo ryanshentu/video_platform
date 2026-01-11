@@ -19,7 +19,7 @@ async function loadVideos() {
     videoData.forEach(video => {
       let videoHTML = `
         <div class="vid-list" data-category="${video.category}">
-          <a href="video.html"> 
+          <a href="video.html?id=${video.id}">
             <img src="${video.thumbnail}" class="thumbnail">
           </a>
           <div class="flex-div">

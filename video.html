@@ -1,260 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Video Player</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  <nav class="flex-div">
+
+<nav class="flex-div">
     <div class="nav-left flex-div">
-      <img src="youtubeimages/menu.png" class="menu-icon">
-      <a href="index.html">
-        <img src="youtubeimages/logo.png" class="logo">
-      </a>
+        <img src="youtubeimages/menu.png" class="menu-icon">
+        <a href="index.html"><img src="youtubeimages/logo.png" class="logo"></a>
     </div>
-  
     <div class="nav-middle flex-div">
-      <div class="search-box flex-div">
-          <input type="text" placeholder="Search">
-          <img src="youtubeimages/search.png">
-      </div>
-      <img src="youtubeimages/voice-search.png" class="mic-icon">
+        <div class="search-box flex-div">
+            <input type="text" placeholder="Search">
+            <img src="youtubeimages/search.png">
+        </div>
+        <img src="youtubeimages/voice-search.png" class="mic-icon">
     </div>
-  
     <div class="nav-right flex-div">
-      <img src="youtubeimages/upload.png">
-      <img src="youtubeimages/more.png">
-      <img src="youtubeimages/notification.png">
-      <img src="youtubeimages/Jack.png" class="user-icon">
+        <img src="youtubeimages/upload.png">
+        <img src="youtubeimages/more.png">
+        <img src="youtubeimages/notification.png">
+        <img src="youtubeimages/Jack.png" class="user-icon">
     </div>
-  </nav>
+</nav>
 
-  <div class="container play-container">
+<div class="container play-container">
     <div class="row">
-      <div class="video">
-          <video controls autoplay>
-            <source src="youtubeimages/video.mp4" type="video/mp4">
-          </video>
+        <div class="play-video">
+            <iframe id="video-frame" width="100%" src="" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
 
-          <div class="tags">
-            <a href="">#Spinning</a>
-            <a href="">#Frog</a>
-            <a href="">#Spinning</a>
-            <a href="">#Frog</a>
-          </div>
-          <h3>
-            Spinning Frog
-          </h3>
-          <div class="play-video-info">
-            <p>
-              5.8M Views &bull; 3 days ago
-            </p>
-
-            <div>
-              <a href=""><img src="youtubeimages/like.png">3M</a>
-              <a href=""><img src="youtubeimages/dislike.png">0</a>
-              <a href=""><img src="youtubeimages/share.png">Share</a>
-              <a href=""><img src="youtubeimages/save.png">Save</a>
+            <div class="tags">
+                <a href="">#Coding</a> <a href="">#HTML</a> <a href="">#CSS</a> <a href="">#JavaScript</a>
             </div>
-          </div>
-          <hr>
 
-          <div class="publisher">
-            <img src="youtubeimages/Jack.png">
-          
-          <div>
-          <p>Ryan Shentu</p>
-          <span>6.8M Subscribers</span>
-        </div>
-          
-            <button type="button">Subscribe</button>
-        </div>
+            <h3 id="video-title">Loading Title...</h3>
 
-        <div class="vid-discription">
-          <p>Ryan's Channel</p>
-          <p>Subscribe Ryan to watch more</p>
-          <hr>
-          <h4>105 Comments</h4>
-
-          <div class="add-comment">
-            <img src="youtubeimages/Jack.png">
-            <input type="text" placeholder="Write Comments...">
-        </div>
-      </div>
-
-        <div class="old-comment">
-          <img src="youtubeimages/Jack.png">
-          <div>
-            <h3>Ryan Shentu <span>2 days ago</span></h3>
-            <p>Comment comment comment comment</p>
-            <div class="comment-action">
-              <img src="youtubeimages/like.png">
-              <span>988</span>
-              <img src="youtubeimages/dislike.png">
-              <span>5</span>
-              <span>REPLY</span>
-              <a href="">ALL replies</a>
+            <div class="play-video-info">
+                <p id="video-views">Loading Views...</p>
+                <div>
+                    <a href=""><img src="youtubeimages/like.png">125</a>
+                    <a href=""><img src="youtubeimages/dislike.png">2</a>
+                    <a href=""><img src="youtubeimages/share.png">Share</a>
+                    <a href=""><img src="youtubeimages/save.png">Save</a>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <div class="old-comment">
-          <img src="youtubeimages/Jack.png">
-          <div>
-            <h3>Ryan Shentu <span>2 days ago</span></h3>
-            <p>Comment comment comment comment</p>
-            <div class="comment-action">
-              <img src="youtubeimages/like.png">
-              <span>988</span>
-              <img src="youtubeimages/dislike.png">
-              <span>5</span>
-              <span>REPLY</span>
-              <a href="">ALL replies</a>
+            <hr>
+            <div class="publisher">
+                <img src="youtubeimages/Jack.png">
+                <div>
+                    <p id="channel-name">Loading Channel...</p>
+                    <span>500k Subscribers</span>
+                </div>
+                <button type="button">Subscribe</button>
             </div>
-          </div>
-        </div>
 
-        <div class="old-comment">
-          <img src="youtubeimages/Jack.png">
-          <div>
-            <h3>Ryan Shentu <span>2 days ago</span></h3>
-            <p>Comment comment comment comment</p>
-            <div class="comment-action">
-              <img src="youtubeimages/like.png">
-              <span>988</span>
-              <img src="youtubeimages/dislike.png">
-              <span>5</span>
-              <span>REPLY</span>
-              <a href="">ALL replies</a>
+            <div class="vid-discription">
+                <p>Channel that makes learning Easy</p>
+                <p>Subscribe for more content!</p>
+                <hr>
+                <h4>134 Comments</h4>
+                
+                <div class="add-comment">
+                    <img src="youtubeimages/Jack.png">
+                    <input type="text" placeholder="Write comments...">
+                </div>
+
+                <div class="old-comment">
+                    <img src="youtubeimages/Jack.png">
+                    <div>
+                        <h3>Ryan Shentu <span>2 days ago</span></h3>
+                        <p>This tutorial is actually really helpful, thanks!</p>
+                        <div class="comment-action">
+                            <img src="youtubeimages/like.png">
+                            <span>244</span>
+                            <img src="youtubeimages/dislike.png">
+                            <span>2</span>
+                            <span>REPLY</span>
+                            <a href="">All replies</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="old-comment">
+                    <img src="youtubeimages/gerard.png">
+                    <div>
+                        <h3>Gerard Joy <span>2 days ago</span></h3>
+                        <p>The code works perfectly. Good job.</p>
+                        <div class="comment-action">
+                            <img src="youtubeimages/like.png">
+                            <span>15</span>
+                            <img src="youtubeimages/dislike.png">
+                            <span>0</span>
+                            <span>REPLY</span>
+                            <a href="">All replies</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
 
-        <div class="old-comment">
-          <img src="youtubeimages/Jack.png">
-          <div>
-            <h3>Ryan Shentu <span>2 days ago</span></h3>
-            <p>Comment comment comment comment</p>
-            <div class="comment-action">
-              <img src="youtubeimages/like.png">
-              <span>988</span>
-              <img src="youtubeimages/dislike.png">
-              <span>5</span>
-              <span>REPLY</span>
-              <a href="">ALL replies</a>
+        <div class="right-sidebar">
+            <div class="side-videolist">
+                <a href="" class="small-thumbnail"><img src="youtubeimages/thumbnail1.png"></a>
+                <div class="vid-info">
+                    <a href="">Best channel to learn coding that helps you.</a>
+                    <p>Easy Tutorials</p>
+                    <p>15k Views</p>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <div class="old-comment">
-          <img src="youtubeimages/Jack.png">
-          <div>
-            <h3>Ryan Shentu <span>2 days ago</span></h3>
-            <p>Comment comment comment comment</p>
-            <div class="comment-action">
-              <img src="youtubeimages/like.png">
-              <span>988</span>
-              <img src="youtubeimages/dislike.png">
-              <span>5</span>
-              <span>REPLY</span>
-              <a href="">ALL replies</a>
+            <div class="side-videolist">
+                <a href="" class="small-thumbnail"><img src="youtubeimages/thumbnail2.png"></a>
+                <div class="vid-info">
+                    <a href="">Best channel to learn coding that helps you.</a>
+                    <p>Easy Tutorials</p>
+                    <p>15k Views</p>
+                </div>
             </div>
-          </div>
+            <div class="side-videolist">
+                <a href="" class="small-thumbnail"><img src="youtubeimages/thumbnail3.png"></a>
+                <div class="vid-info">
+                    <a href="">Best channel to learn coding that helps you.</a>
+                    <p>Easy Tutorials</p>
+                    <p>15k Views</p>
+                </div>
+            </div>
+            <div class="side-videolist">
+                <a href="" class="small-thumbnail"><img src="youtubeimages/thumbnail4.png"></a>
+                <div class="vid-info">
+                    <a href="">Best channel to learn coding that helps you.</a>
+                    <p>Easy Tutorials</p>
+                    <p>15k Views</p>
+                </div>
+            </div>
+            <div class="side-videolist">
+                <a href="" class="small-thumbnail"><img src="youtubeimages/thumbnail5.png"></a>
+                <div class="vid-info">
+                    <a href="">Best channel to learn coding that helps you.</a>
+                    <p>Easy Tutorials</p>
+                    <p>15k Views</p>
+                </div>
+            </div>
         </div>
-
-      </div>
-
-
-      <div class="right-sidebar">
-
-        <div class="side-videolist">
-          <a href="" class="small-thumbnail"><img src="youtubeimages/thumbnail0.png"> </a>
-          <div class="vid-info">
-            <a href=""> Spinning frog</a>
-            <p>Ryan Shentu</p>
-            <p>5.8M Views</p>
-          </div>
-        </div>
-
-        <div class="side-videolist">
-          <a href="" class="small-thumbnail"><img src="youtubeimages/thumbnail0.png"> </a>
-          <div class="vid-info">
-            <a href=""> Spinning frog</a>
-            <p>Ryan Shentu</p>
-            <p>5.8M Views</p>
-          </div>
-        </div>
-
-        <div class="side-videolist">
-          <a href="" class="small-thumbnail"><img src="youtubeimages/thumbnail0.png"> </a>
-          <div class="vid-info">
-            <a href=""> Spinning frog</a>
-            <p>Ryan Shentu</p>
-            <p>5.8M Views</p>
-          </div>
-        </div>
-
-        <div class="side-videolist">
-          <a href="" class="small-thumbnail"><img src="youtubeimages/thumbnail0.png"> </a>
-          <div class="vid-info">
-            <a href=""> Spinning frog</a>
-            <p>Ryan Shentu</p>
-            <p>5.8M Views</p>
-          </div>
-        </div>
-
-        <div class="side-videolist">
-          <a href="" class="small-thumbnail"><img src="youtubeimages/thumbnail0.png"> </a>
-          <div class="vid-info">
-            <a href=""> Spinning frog</a>
-            <p>Ryan Shentu</p>
-            <p>5.8M Views</p>
-          </div>
-        </div>
-
-        <div class="side-videolist">
-          <a href="" class="small-thumbnail"><img src="youtubeimages/thumbnail0.png"> </a>
-          <div class="vid-info">
-            <a href=""> Spinning frog</a>
-            <p>Ryan Shentu</p>
-            <p>5.8M Views</p>
-          </div>
-        </div>
-
-        <div class="side-videolist">
-          <a href="" class="small-thumbnail"><img src="youtubeimages/thumbnail0.png"> </a>
-          <div class="vid-info">
-            <a href=""> Spinning frog</a>
-            <p>Ryan Shentu</p>
-            <p>5.8M Views</p>
-          </div>
-        </div>
-
-        <div class="side-videolist">
-          <a href="" class="small-thumbnail"><img src="youtubeimages/thumbnail0.png"> </a>
-          <div class="vid-info">
-            <a href=""> Spinning frog</a>
-            <p>Ryan Shentu</p>
-            <p>5.8M Views</p>
-          </div>
-        </div>
-
-        <div class="side-videolist">
-          <a href="" class="small-thumbnail"><img src="youtubeimages/thumbnail0.png"> </a>
-          <div class="vid-info">
-            <a href=""> Spinning frog</a>
-            <p>Ryan Shentu</p>
-            <p>5.8M Views</p>
-          </div>
-        </div>
-
-      </div>
-
     </div>
-  </div>
+</div>
+
+<script src="play-video.js"></script>
 
 </body>
 </html>

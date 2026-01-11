@@ -22,6 +22,7 @@ nav{
   position: sticky;
   top: 0;
   z-index: 10;
+  background: #fff;
 }
 .nav-right img{
   width: 25px;
@@ -234,7 +235,8 @@ nav{
   flex-wrap: wrap;
 }
 
-.video{
+/* FIXED: Changed .video to .play-video and increased width */
+.play-video{
   flex-basis: 69%;
 }
 
@@ -242,8 +244,11 @@ nav{
   flex-basis: 30%;
 }
 
-.video video{
+/* FIXED: iframe aspect ratio logic */
+.play-video iframe {
   width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px; 
 }
 
 .side-videolist{
@@ -264,17 +269,18 @@ nav{
   flex-basis: 49%;
 }
 
-.video .tags a{
+/* FIXED: Updated all .video selectors to .play-video */
+.play-video .tags a{
   color: #0000ff;
   font-size: 13px;
 }
 
-.video h3{
+.play-video h3{
   font-weight: 600;
   font-size: 22px;
 }
 
-.video .play-video-info{
+.play-video .play-video-info{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -284,18 +290,18 @@ nav{
   color: #5a5a5a;
 }
 
-.video .play-video-info a img{
+.play-video .play-video-info a img{
   width: 20px;
   margin-right: 8px;
 }
 
-.video .play-video-info a{
+.play-video .play-video-info a{
   display: inline-flex;
   align-items: center;
   margin-left: 15px;
 }
 
-.video hr{
+.play-video hr{
   border: 0;
   height: 1px;
   background: #ccc;
@@ -428,7 +434,8 @@ nav{
 }
 
 @media (max-width:900px){
-  .video{
+  /* FIXED: Update media query too */
+  .play-video{
     flex-basis: 100%;
   }
   .right-sidebar{
@@ -440,7 +447,7 @@ nav{
   .vid-discription{
     padding-left: 0;
   }
-  .video .play-video-info a{
+  .play-video .play-video-info a{
     margin-left: 0;
     margin-right: 15px;
     margin-top: 15px;
