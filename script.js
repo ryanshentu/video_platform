@@ -1,4 +1,3 @@
-// 1. Variables
 var menuIcon = document.querySelector(".menu-icon");
 var sidebar = document.querySelector(".sidebar");
 var container = document.querySelector(".container");
@@ -6,14 +5,11 @@ var listContainer = document.getElementById("video-grid");
 var searchInput = document.getElementById("search-input");
 var noResultsMsg = document.getElementById("no-results");
 
-// 2. Fetch Data using API (Simulated)
 async function loadVideos() {
   try {
-    // This fetches the file 'data.json' just like a real API call
     const response = await fetch('data.json'); 
     const videoData = await response.json();
 
-    // Clear existing content
     listContainer.innerHTML = ""; 
 
     videoData.forEach(video => {
@@ -41,10 +37,8 @@ async function loadVideos() {
   }
 }
 
-// Run the function
 loadVideos();
 
-// ---- Menu Toggle ----
 menuIcon.onclick = function(){
   if(sidebar){
     sidebar.classList.toggle("small-sidebar");
@@ -52,7 +46,6 @@ menuIcon.onclick = function(){
   container.classList.toggle("large-container");
 }
 
-// ---- Mood Filter Logic ----
 function filterVideos(category, btnElement) {
   var videos = document.querySelectorAll(".vid-list");
   
@@ -76,7 +69,6 @@ function filterVideos(category, btnElement) {
   }
 }
 
-// ---- Search Logic ----
 if(searchInput) {
   searchInput.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
