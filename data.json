@@ -1,0 +1,58 @@
+[
+  {
+    "thumbnail": "youtubeimages/thumbnail1.png",
+    "title": "Try Not To Laugh Challenge",
+    "channel": "Comedy Central",
+    "views": "2M Views • 1 day ago",
+    "category": "funny"
+  },
+  {
+    "thumbnail": "youtubeimages/thumbnail2.png",
+    "title": "Learn CSS Grid in 10 Min",
+    "channel": "Web Dev Simplified",
+    "views": "500k Views • 2 days ago",
+    "category": "educational"
+  },
+  {
+    "thumbnail": "youtubeimages/thumbnail3.png",
+    "title": "Lofi Beats to Study To",
+    "channel": "Lofi Girl",
+    "views": "15k Views • 3 hours ago",
+    "category": "relaxed"
+  },
+  {
+    "thumbnail": "youtubeimages/thumbnail4.png",
+    "title": "Insane Parkour Highlights",
+    "channel": "Red Bull",
+    "views": "8M Views • 1 week ago",
+    "category": "hype"
+  },
+  {
+    "thumbnail": "youtubeimages/thumbnail5.png",
+    "title": "Cats Being Weird",
+    "channel": "MeowTube",
+    "views": "10M Views • 5 days ago",
+    "category": "funny"
+  },
+  {
+    "thumbnail": "youtubeimages/thumbnail6.png",
+    "title": "History of the Universe",
+    "channel": "Kurzgesagt",
+    "views": "3M Views • 1 month ago",
+    "category": "educational"
+  },
+  {
+    "thumbnail": "youtubeimages/thumbnail7.png",
+    "title": "Rain Sounds 10 Hours",
+    "channel": "Nature Hub",
+    "views": "100k Views • 1 year ago",
+    "category": "relaxed"
+  },
+  {
+    "thumbnail": "youtubeimages/thumbnail0.png",
+    "title": "Best Gaming Moments 2024",
+    "channel": "Gaming Nexus",
+    "views": "4M Views • 2 days ago",
+    "category": "hype"
+  }
+]

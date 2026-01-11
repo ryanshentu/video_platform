@@ -1,103 +1,50 @@
-// 1. The Data (Your Video Database)
-const videoData = [
-  {
-    thumbnail: "youtubeimages/thumbnail1.png",
-    title: "Try Not To Laugh Challenge",
-    channel: "Comedy Central",
-    views: "2M Views • 1 day ago",
-    category: "funny"
-  },
-  {
-    thumbnail: "youtubeimages/thumbnail2.png",
-    title: "Learn CSS Grid in 10 Min",
-    channel: "Web Dev Simplified",
-    views: "500k Views • 2 days ago",
-    category: "educational"
-  },
-  {
-    thumbnail: "youtubeimages/thumbnail3.png",
-    title: "Lofi Beats to Study To",
-    channel: "Lofi Girl",
-    views: "15k Views • 3 hours ago",
-    category: "relaxed"
-  },
-  {
-    thumbnail: "youtubeimages/thumbnail4.png",
-    title: "Insane Parkour Highlights",
-    channel: "Red Bull",
-    views: "8M Views • 1 week ago",
-    category: "hype"
-  },
-  {
-    thumbnail: "youtubeimages/thumbnail5.png",
-    title: "Cats Being Weird",
-    channel: "MeowTube",
-    views: "10M Views • 5 days ago",
-    category: "funny"
-  },
-  {
-    thumbnail: "youtubeimages/thumbnail6.png",
-    title: "History of the Universe",
-    channel: "Kurzgesagt",
-    views: "3M Views • 1 month ago",
-    category: "educational"
-  },
-  {
-    thumbnail: "youtubeimages/thumbnail7.png",
-    title: "Rain Sounds 10 Hours",
-    channel: "Nature Hub",
-    views: "100k Views • 1 year ago",
-    category: "relaxed"
-  },
-  {
-    thumbnail: "youtubeimages/thumbnail0.png",
-    title: "Best Gaming Moments 2024",
-    channel: "Gaming Nexus",
-    views: "4M Views • 2 days ago",
-    category: "hype"
-  }
-];
-
-// 2. Variables
+// 1. Variables
 var menuIcon = document.querySelector(".menu-icon");
 var sidebar = document.querySelector(".sidebar");
 var container = document.querySelector(".container");
-var listContainer = document.querySelector(".list-container"); // NEW: Select the container
+var listContainer = document.getElementById("video-grid");
 var searchInput = document.getElementById("search-input");
+var noResultsMsg = document.getElementById("no-results");
 
-// 3. Render Function (The Magic Part)
-// This function loops through the data and builds the HTML
-function loadVideos() {
-  listContainer.innerHTML = ""; // Clear existing content
+// 2. Fetch Data using API (Simulated)
+async function loadVideos() {
+  try {
+    // This fetches the file 'data.json' just like a real API call
+    const response = await fetch('data.json'); 
+    const videoData = await response.json();
 
-  videoData.forEach(video => {
-    // Create the HTML for one video
-    let videoHTML = `
-      <div class="vid-list" data-category="${video.category}">
-        <a href="video.html"> 
-          <img src="${video.thumbnail}" class="thumbnail">
-        </a>
-        <div class="flex-div">
-          <img src="youtubeimages/Jack.png" class="profile-pic">
-          <div class="vid-info">
-            <a href="">${video.title}</a>
-            <p>${video.channel}</p>
-            <p>${video.views}</p>
+    // Clear existing content
+    listContainer.innerHTML = ""; 
+
+    videoData.forEach(video => {
+      let videoHTML = `
+        <div class="vid-list" data-category="${video.category}">
+          <a href="video.html"> 
+            <img src="${video.thumbnail}" class="thumbnail">
+          </a>
+          <div class="flex-div">
+            <img src="youtubeimages/Jack.png" class="profile-pic">
+            <div class="vid-info">
+              <a href="">${video.title}</a>
+              <p>${video.channel}</p>
+              <p>${video.views}</p>
+            </div>
           </div>
         </div>
-      </div>
-    `;
-    // Add it to the container
-    listContainer.innerHTML += videoHTML;
-  });
+      `;
+      listContainer.innerHTML += videoHTML;
+    });
+
+  } catch (error) {
+    console.error("Error loading videos:", error);
+    listContainer.innerHTML = "<p>Error loading videos. Make sure you are using Live Server!</p>";
+  }
 }
 
-// 4. Run the function immediately when the page loads
+// Run the function
 loadVideos();
 
-
-// ---- EXISTING LOGIC (Menu, Search, Filters) ----
-
+// ---- Menu Toggle ----
 menuIcon.onclick = function(){
   if(sidebar){
     sidebar.classList.toggle("small-sidebar");
@@ -105,9 +52,12 @@ menuIcon.onclick = function(){
   container.classList.toggle("large-container");
 }
 
+// ---- Mood Filter Logic ----
 function filterVideos(category, btnElement) {
   var videos = document.querySelectorAll(".vid-list");
   
+  noResultsMsg.style.display = "none";
+
   videos.forEach(function(video) {
     var videoCategory = video.getAttribute("data-category");
     if (category === "all" || category === videoCategory) {
@@ -126,6 +76,7 @@ function filterVideos(category, btnElement) {
   }
 }
 
+// ---- Search Logic ----
 if(searchInput) {
   searchInput.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
@@ -137,7 +88,8 @@ if(searchInput) {
 function searchVideos() {
   var query = searchInput.value.toLowerCase(); 
   var videos = document.querySelectorAll(".vid-list");
-  
+  var matchCount = 0; 
+
   var allButtons = document.querySelectorAll(".mood-btn");
   allButtons.forEach(function(btn){
     btn.classList.remove("active");
@@ -149,8 +101,15 @@ function searchVideos() {
 
     if (title.includes(query) || channel.includes(query)) {
       video.style.display = "block";
+      matchCount++; 
     } else {
       video.style.display = "none";
     }
   });
+
+  if (matchCount === 0) {
+    noResultsMsg.style.display = "block";
+  } else {
+    noResultsMsg.style.display = "none";
+  }
 }
